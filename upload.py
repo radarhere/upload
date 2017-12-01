@@ -167,7 +167,7 @@ end appIsRunning"""
 		self.root.protocol("WM_DELETE_WINDOW",self.quit)
 		self.root.createcommand("exit",self.quit)
 		
-		#Start iTunes conversion on another the main thread
+		#Start iTunes conversion asynchronously
 		self.root.after(1000, self.getSermonPath)
 		
 		self.root.mainloop()
