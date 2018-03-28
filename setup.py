@@ -8,17 +8,19 @@ Usage:
 from setuptools import setup
 
 APP = ['upload.py']
-DATA_FILES = []
+DATA_FILES = [
+	'resources'
+]
 OPTIONS = {
-	'iconfile':'resources/UploadLogo.icns',
-	'plist':'resources/Info.plist'
+	'iconfile':'settings/UploadLogo.icns',
+	'plist':'settings/Info.plist'
 }
 
 setup(
     app=APP,
     data_files=DATA_FILES,
     options={'py2app': OPTIONS},
-    version='1.0',
-    author='Andrew Murray',
+    version='1.1',
+    author='Radartech',
     setup_requires=['py2app']
 )
