@@ -29,8 +29,7 @@ class Upload:
 			return mostRecentPath
 
 	def convert(self, path, dest):
-		lames = ['/opt/local/bin/lame', '/usr/local/bin/lame']
-		for lame in lames:
+		for lame in ['/opt/local/bin/lame', '/usr/local/bin/lame']:
 			if os.path.exists(lame):
 				p = subprocess.Popen([lame,'-m','m',path,dest], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 				break
