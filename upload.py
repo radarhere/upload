@@ -50,7 +50,8 @@ class Upload:
 	def getSermonDetails(self):
 		path = self.getPath()
 		if not path:
-			tkinter.messagebox.showerror("Error", "An error occurred in connecting to iTunes.")
+			applicationName = "Music" if int(os.uname().release.split('.')[0]) > 18 else "iTunes"
+			tkinter.messagebox.showerror("Error", "An error occurred in connecting to "+applicationName+".")
 			sys.exit()
 
 		audio = MP3(path)
